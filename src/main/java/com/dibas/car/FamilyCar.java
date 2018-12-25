@@ -2,37 +2,41 @@ package com.dibas.car;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-import javax.annotation.*;
-import javax.inject.Inject;
-import javax.inject.Named;
 
+@Component("familyCar")
 public class FamilyCar {
 
-	//@Resource(name="smallTier")
-	//@Qualifier(value="sTier")
-	@Inject
-	@Named("smallTier")
+	/*// @Resource(name="smallTier")
+	// @Qualifier(value="sTier")
+	// @Inject
+	// @Named("smallTier")
+	@Autowired
 	private Tier frontLeft;
-	//@Resource(name="smallTier")
-	//@Qualifier(value="sTier")
-	@Inject
-	@Named("smallTier")
+	// @Resource(name="smallTier")
+	// @Qualifier(value="sTier")
+	// @Inject
+	// @Named("smallTier")
+	@Autowired
 	private Tier frontRight;
-	//@Resource(name="bigTier")
-	//@Qualifier(value="bTier")
-	@Inject
-	@Named("bigTier")
+	// @Resource(name="bigTier")
+	// @Qualifier(value="bTier")
+	// @Inject
+	// @Named("bigTier")
+	@Autowired
 	private Tier rearLeft;
-	//@Resource(name="bigTier")
-	//@Qualifier(value="bTier")
-	@Inject
-	@Named("bigTier")
+	// @Resource(name="bigTier")
+	// @Qualifier(value="bTier")
+	// @Inject
+	// @Named("bigTier")
+	@Autowired
 	private Tier rearRight;
-	//@Resource(name="sixCyl")
-	//@Qualifier("fourCyl")
-	@Inject
-	@Named("sixCyl")
+	// @Resource(name="sixCyl")
+	// @Qualifier("fourCyl")
+	// @Inject
+	// @Named("sixCyl")
+	@Autowired
 	private Engine engineType;
 
 	public Tier getFrontLeft() {
@@ -100,5 +104,31 @@ public class FamilyCar {
 
 		return desc;
 	}
+*/
+	
+	@Autowired
+	@Qualifier(value="fourCyl")
+	private Engine myEngine;
 
+	public Engine getMyEngine() {
+		return myEngine;
+	}
+
+	public void setMyEngine(Engine myEngine) {
+		this.myEngine = myEngine;
+	}
+	
+	
+	public String getCarDescription() {
+		
+		String result = "";
+		
+		if(myEngine != null) { result += "Engine Size : "+ myEngine.getNumberOfCylinder();}
+		//if(result == null) result += "Nothing is set for this car";
+		
+		return result;
+	}
+	
+	
+	
 }

@@ -9,6 +9,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:annotation-config />
+	<context:component-scan base-package="com.dibas.car"></context:component-scan>
 
 	<!-- <bean id="smallTier" class="com.dibas.car.SmallTier">
 		<qualifier value="sTier"/>
@@ -16,10 +17,10 @@
 	<bean id="bigTier" class="com.dibas.car.BigTier">
 		<qualifier value="bTier"/>
 	</bean> -->
-	<bean id="smallTier" class="com.dibas.car.SmallTier"/>
-	<bean id="bigTier" class="com.dibas.car.BigTier"/>
-	<bean id="sixCyl" class="com.dibas.car.SixCylinderEngine"/>
-	<bean id="fourCyl" class="com.dibas.car.FourCylinderEngine"/>
+	<!-- <bean id="smallTier" class="com.dibas.car.SmallTier"/>
+	<bean id="bigTier" class="com.dibas.car.BigTier"/> -->
+	<!-- <bean id="sixCyl" class="com.dibas.car.SixCylinderEngine"/>
+	<bean id="fourCyl" class="com.dibas.car.FourCylinderEngine"/> -->
 	
 	<!-- <bean id="familyCar" class="com.dibas.car.FamilyCar">
 		<property name="frontLeft" ref="smallTier"/>
@@ -29,6 +30,8 @@
 		<property name="engineType" ref="fourCyl"/>
 	</bean> -->
 	
-		<bean id="familyCar" class="com.dibas.car.FamilyCar"/>
+		<!-- <bean id="familyCar" class="com.dibas.car.FamilyCar">
+			<property name="myEngine" ref="fourCyl"></property>
+		</bean> -->
 
 </beans>
