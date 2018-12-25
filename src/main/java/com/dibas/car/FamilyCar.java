@@ -4,23 +4,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.annotation.*;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 public class FamilyCar {
 
-	@Resource(name="smallTier")
+	//@Resource(name="smallTier")
 	//@Qualifier(value="sTier")
+	@Inject
+	@Named("smallTier")
 	private Tier frontLeft;
-	@Resource(name="smallTier")
+	//@Resource(name="smallTier")
 	//@Qualifier(value="sTier")
+	@Inject
+	@Named("smallTier")
 	private Tier frontRight;
-	@Resource(name="bigTier")
+	//@Resource(name="bigTier")
 	//@Qualifier(value="bTier")
+	@Inject
+	@Named("bigTier")
 	private Tier rearLeft;
-	@Resource(name="bigTier")
+	//@Resource(name="bigTier")
 	//@Qualifier(value="bTier")
+	@Inject
+	@Named("bigTier")
 	private Tier rearRight;
-	@Resource(name="sixCyl")
+	//@Resource(name="sixCyl")
 	//@Qualifier("fourCyl")
+	@Inject
+	@Named("sixCyl")
 	private Engine engineType;
 
 	public Tier getFrontLeft() {
