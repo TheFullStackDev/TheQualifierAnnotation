@@ -1,18 +1,24 @@
 package com.dibas.car;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class FamilyCar {
 
-	// @Autowired
+	@Autowired
+	@Qualifier(value="sTier")
 	private Tier frontLeft;
-	// @Autowired
+	@Autowired
+	@Qualifier(value="sTier")
 	private Tier frontRight;
-	// @Autowired
+	@Autowired
+	@Qualifier(value="bTier")
 	private Tier rearLeft;
-	// @Autowired
+	@Autowired
+	@Qualifier(value="bTier")
 	private Tier rearRight;
-	// @Autowired
+	@Autowired
+	@Qualifier("fourCyl")
 	private Engine engineType;
 
 	public Tier getFrontLeft() {

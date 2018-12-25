@@ -10,19 +10,23 @@
 
 	<context:annotation-config />
 
-	<bean id="smallTier" class="com.dibas.car.SmallTier"/>
-	<bean id="bigTier" class="com.dibas.car.BigTier"/>
+	<bean id="smallTier" class="com.dibas.car.SmallTier">
+		<qualifier value="sTier"/>
+	</bean>
+	<bean id="bigTier" class="com.dibas.car.BigTier">
+		<qualifier value="bTier"/>
+	</bean>
 	<bean id="sixCyl" class="com.dibas.car.SixCylinderEngine"/>
 	<bean id="fourCyl" class="com.dibas.car.FourCylinderEngine"/>
 	
-	<bean id="familyCar" class="com.dibas.car.FamilyCar">
+	<!-- <bean id="familyCar" class="com.dibas.car.FamilyCar">
 		<property name="frontLeft" ref="smallTier"/>
 		<property name="frontRight" ref="smallTier"/>
 		<property name="rearLeft" ref="bigTier"/>
 		<property name="rearRight" ref="bigTier"/>
 		<property name="engineType" ref="fourCyl"/>
-	</bean>
+	</bean> -->
 	
-		
+		<bean id="familyCar" class="com.dibas.car.FamilyCar"/>
 
 </beans>
