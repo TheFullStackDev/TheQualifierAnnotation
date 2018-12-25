@@ -3,22 +3,24 @@ package com.dibas.car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.*;
+
 public class FamilyCar {
 
-	@Autowired
-	@Qualifier(value="sTier")
+	@Resource(name="smallTier")
+	//@Qualifier(value="sTier")
 	private Tier frontLeft;
-	@Autowired
-	@Qualifier(value="sTier")
+	@Resource(name="smallTier")
+	//@Qualifier(value="sTier")
 	private Tier frontRight;
-	@Autowired
-	@Qualifier(value="bTier")
+	@Resource(name="bigTier")
+	//@Qualifier(value="bTier")
 	private Tier rearLeft;
-	@Autowired
-	@Qualifier(value="bTier")
+	@Resource(name="bigTier")
+	//@Qualifier(value="bTier")
 	private Tier rearRight;
-	@Autowired
-	@Qualifier("fourCyl")
+	@Resource(name="sixCyl")
+	//@Qualifier("fourCyl")
 	private Engine engineType;
 
 	public Tier getFrontLeft() {

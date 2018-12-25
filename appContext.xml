@@ -10,12 +10,14 @@
 
 	<context:annotation-config />
 
-	<bean id="smallTier" class="com.dibas.car.SmallTier">
+	<!-- <bean id="smallTier" class="com.dibas.car.SmallTier">
 		<qualifier value="sTier"/>
 	</bean>
 	<bean id="bigTier" class="com.dibas.car.BigTier">
 		<qualifier value="bTier"/>
-	</bean>
+	</bean> -->
+	<bean id="smallTier" class="com.dibas.car.SmallTier"/>
+	<bean id="bigTier" class="com.dibas.car.BigTier"/>
 	<bean id="sixCyl" class="com.dibas.car.SixCylinderEngine"/>
 	<bean id="fourCyl" class="com.dibas.car.FourCylinderEngine"/>
 	
