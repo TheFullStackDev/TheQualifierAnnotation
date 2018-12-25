@@ -1,11 +1,14 @@
 package com.dibas.car;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
-@Component("familyCar")
+@Named
 public class FamilyCar {
 
 	/*// @Resource(name="smallTier")
@@ -106,8 +109,11 @@ public class FamilyCar {
 	}
 */
 	
-	@Autowired
-	@Qualifier(value="fourCyl")
+	//@Autowired
+	//@Qualifier(value="FourCylinderEngine")
+	@Inject
+	@Named(value="FourCylinderEngine")
+		
 	private Engine myEngine;
 
 	public Engine getMyEngine() {
